@@ -1,0 +1,46 @@
+# Local JDK and Maven binaries — too large for git, install separately
+libraries/
+
+# Maven
+target/
+*.class
+*.jar
+*.war
+*.ear
+
+# Maven wrapper downloads
+.mvn/repository/
+
+# IDE
+.idea/
+*.iml
+*.iws
+*.ipr
+.classpath
+.project
+.settings/
+.vscode/
+
+# Quarkus
+**/quarkus-app/
+.quarkus/
+quarkus-run.jar
+
+# Frontend
+frontend/taxi-rank-manager-web/node_modules/
+frontend/taxi-rank-manager-web/dist/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets — never commit these
+*.env
+.env
+.env.local
+application-local.properties
+application.properties.local
+
+# Logs
+*.log
+logs/

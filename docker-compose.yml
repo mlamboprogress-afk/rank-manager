@@ -1,0 +1,22 @@
+services:
+
+  postgres:
+    image: postgres:16
+    container_name: taxi-rank-manager-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: taxi_rank_manager
+      POSTGRES_USER: taxi_rank_manager
+      POSTGRES_PASSWORD: changeme
+    ports:
+      - "5432:5432"
+    volumes:
+      - taxi_rank_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U taxi_rank_manager -d taxi_rank_manager"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  taxi_rank_data:
